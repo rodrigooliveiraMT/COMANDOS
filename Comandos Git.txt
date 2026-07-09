@@ -1,0 +1,85 @@
+###############################################################################################################################
+# Configuração inicial
+###############################################################################################################################
+git config --global user.name "App Meu RPPS" # Define o nome do autor nos commits
+git config --global user.email "appmeurpps@gmail.com" # Define o e-mail do autor nos commits
+git config --global init.defaultBranch main # Define "main" como branch padrão ao criar repositório
+git config --list # Lista todas as configurações ativas do Git
+git config user.name # Mostra o nome configurado local ou global
+git config user.email # Mostra o e-mail configurado local ou global
+git config --local user.name # Mostra o nome configurado apenas para este repositório
+git config --local user.email # Mostra o e-mail configurado apenas para este repositório
+git config --global alias.log1 log --oneline # Cria atalho de log para todos os usuários vinculados ao git
+git config alias.log1 log --oneline # Cria atalho de log para os terminais da máquina local
+###############################################################################################################################
+# Criar repositório e enviar para o GitHub
+###############################################################################################################################
+git init # Inicia um repositório Git na pasta atual
+git add . # Adiciona todos os arquivos ao stage
+git add "Nome do Arquivo" # Adiciona um arquivo específico ao stage
+git branch -M main # Renomeia a branch atual para main
+git commit -m "Enviar o primeiro commit do projeto" # Registra as mudanças com uma mensagem descritiva
+git commit -a -m "Enviar o primeiro commit do projeto" # Registra as mudanças diretamente, sem enviar para a stage
+git commit -am "Enviar o primeiro commit do projeto" # Registra as mudanças diretamente, sem enviar para a stage
+git remote add origin url # Vincula o repositório local ao remoto no GitHub
+git remote add origin https://github.com/MeuRPPS2023/SeleniumWebDriverJava.git # Vincula o repositório local ao remoto no GitHub
+git pull origin main --allow-unrelated-histories # Baixa e une o histórico remoto com o local
+git push -u origin main # Envia os commits para o GitHub e define o rastreamento automático
+###############################################################################################################################
+# Verificar se subiu corretamente
+###############################################################################################################################
+git remote -v # Mostra as URLs do repositório remoto configurado
+git branch --show-current # Mostra o nome da branch atual
+git status # Mostra quais arquivos foram modificados ou estão no stage
+git log # Mostra histórico completo com autor, data e mensagem
+git log --oneline # Mostra o histórico de commits em formato resumido
+git log -p # Mostra o histórico completo dos commits com diferenças
+git log --pretty=format:"%an <%ae>" # Mostra apenas o nome e e-mail de quem fez cada commit
+git log --graph # Mostra o log visualmente com as merges
+git log --merges # Mostra o log somente das merges
+git log dev..main # Compara as branches dev e main
+git commit -m "Nova Informação" --amend # Altera a descrição do último commit realizado
+git diff # Mostra as diferenças entre alterações atuais
+###############################################################################################################################
+# Atualizar e sincronizar
+###############################################################################################################################
+git fetch # Baixa as atualizações do remoto sem aplicar na branch local
+git pull # Baixa as atualizações do remoto e aplica automaticamente na branch local
+git pull origin main # Baixa o histórico remoto da branch main
+git push # Envia os commits para o GitHub
+git push origin main # Envia a main atualizada para o GitHub
+git push --all # Envia todas as branches para o GitHub
+git pull origin develop --rebase # Baixa atualizações da develop e reaplica seus commits em cima
+git push -u origin develop # Envia a branch develop para o GitHub
+###############################################################################################################################
+# Trabalhar com arquivos
+###############################################################################################################################
+git mv "Atual Nome do Arquivo" "Novo Nome do Arquivo" # Renomeia o arquivo
+git rm --cached "Nome do Arquivo" # Remove o arquivo da staging
+git restore --staged "Nome do Arquivo" # Remove o arquivo do stage, mas mantém as alterações locais
+git restore "Nome do Arquivo" # Descarta as alterações locais e volta ao estado do último commit
+git rm -rf .git # Remove o repositório local git
+###############################################################################################################################
+# Branches
+###############################################################################################################################
+git branch # Lista as branches
+git branch -a # Lista as branches locais e remotas
+git branch develop # Cria uma nova branch chamada develop
+git branch -d develop # Remove a branch develop
+git switch -c dev # Cria e muda para a branch dev
+git checkout -b develop # Cria e muda para a branch develop
+git checkout main # Muda para a branch main
+git switch main # Muda para a branch main
+git merge develop # Une o histórico da develop na main
+git merge -m "Mensagem" develop # Une o histórico da develop com a main e insere descrição
+###############################################################################################################################
+# Comandos do sistema
+###############################################################################################################################
+ls # Lista os arquivos e pastas do diretório atual
+pwd # Mostra o caminho completo do diretório atual
+###############################################################################################################################
+# Observações
+###############################################################################################################################
+git soft # Referência para reset --soft
+git mixed # Referência para reset --mixed
+git hard # Referência para reset --hard
