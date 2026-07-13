@@ -1,0 +1,15 @@
+Login:
+admin@admin.com
+admin@123
+
+Programas Necessários:
+Java JDK > V. 8
+MVN
+VS CODE
+
+WebDriver Chrome:
+DRIVE CHROME: https://googlechromelabs.github.io/chrome-for-testing/
+MAVEN: https://maven.apache.org/download.cgi
+
+Comando Para Criar O Projeto de Automação e Maven:
+mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart

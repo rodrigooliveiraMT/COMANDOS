@@ -1,0 +1,66 @@
+python -m venv mv #Comando para criar maquina virtual Python (Executar uma única vez no projeto)
+mv\Scripts\Activate.bat #Ativar a máquina virtual Python pelo cmd (Executar todas as vez que abrir o projeto)
+pip install selenium #Instalar Selenium na máquina virtual Python (Executar uma única vez no projeto)
+Remove-Item -Recurse -Force mv # Remove a máquina virtual (venv/mv)
+pip install pytest
+# ===============================================================================================================================================================
+
+python -m pip install pytest allure-pytest   #Comando para instalar allure
+
+pytest --alluredir=reports #Cria novo repositório dos testes
+python -m pytest -v tests\test_pericia_medica_test.py --alluredir reports #Executa os testes com allure
+
+allure serve reports/ #Executa o relatório html dos testes
+
+allure generate reports/ -o allure-report --clean #Cria novo repositório dos testes organizados
+allure open allure-report
+
+link: https://github.com/allure-framework/allure2/releases
+
+python -m pytest -v --headed --browser=chromium tests\test_primeiro.py --alluredir=allure-results
+allure generate allure-results -o allure-report --clean
+allure generate allure-results -o allure-results --clean
+allure serve allure-report
+
+
+
+PlayWright
+---------------------
+1 - Instalar Python + Add Python to Path
+2 - executar comando: python --version
+3 - Instalar do PyCharm
+4 - Criar a máquina virtual dentro do projeto, executar o comando: python -m venv mv
+5 - Acessar a máquina virtual, executar o comando: mv\Scripts\Activate.ps1
+6 - Instalando Playwright + Pytest, executar os comandos:
+	pip install pytest pytest-playwright
+	playwright install
+7 - Estruturar o projeto:
+	nome_projeto
+		tests
+			criar os arquivos .py
+		mv
+			máquina virtual
+		requeriments.txt
+			Executar o comando no terminal: pip freeze > requeriments.txt
+			Executar o comando no terminal: pip install -r requeriments.txt
+		pytest.ini
+			[pytest]
+			addopts = --headed --browser firefox --alluredir=allure-results --clean-alluredir
+			testpaths = tests
+8 - Ordenar a execução dos testes em ordem desejado:
+	Excecutar este comando na máquina virtual (venv/mv): python -m pip install pytest-order
+	Acima de cada test informar a ordem: @pytest.mark.order(1)
+	
+9 - Comando para rodar o projeto:
+	python -m pytest
+	python -m pytest tests\nome_arquivo.py
+	python -m pytest -v tests\nome_arquivo.py
+	python -m pytest -v tests/nome_arquivo.py --alluredir=allure-results --clean-alluredir
+
+Pegar Elemento no PlayWright:
+page.locator("#login")  ---> ID
+page.locator(".btn-primary") ---> ClassName
+page.locator('[name="q"]') ---> Name
+page.locator("//input[@name='q']") ---> Xpath
+page.locator("input[name='q']") ---> Xpath
+page.locator("//h1[text()='TextoAqui']") ---> Xpath

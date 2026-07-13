@@ -1,0 +1,20 @@
+python -m venv mv //Comando para criar maquina virtual Python (Executar uma única vez no projeto)
+.mv\Scripts\Activate.ps1 //Ativar a máquina virtual Python pelo vscode (Executar todas as vez que abrir o projeto)
+mv\Scripts\Activate.bat //Ativar a máquina virtual Python pelo cmd (Executar todas as vez que abrir o projeto)
+pip install selenium //Instalar Selenium na máquina virtual Python (Executar uma única vez no projeto)
+pip install selenium //Instalar Selenium na máquina virtual Python (Executar uma única vez no projeto .venv)
+pip install pytest
+# ===============================================================================================================================================================
+# Executar os testes
+    python -m pytest
+    python -m pytest -v -s
+    python -m pytest tests\test_curso_selenium_test.py
+# ===============================================================================================================================================================	
+deactivate # Sai da máquina virtual e retorna para a máquina local
+Remove-Item -Recurse -Force mv # Deleta a máquina virtual (mv ou venv)
+py -3.14 -m venv mv # Cria uma máquina virtual a partir da versão 3.14 do python
+.\mv\Scripts\activate # Ativa a máquina virtual
+python -m pip install --upgrade pip # Atualiza a versão do python
+pip install -r requirements.txt # Instala as dependências do requerimento
+pip list
+pip show pytest
