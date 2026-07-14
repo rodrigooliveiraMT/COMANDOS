@@ -1,6 +1,6 @@
 Login:
 admin@admin.com
-admin@123
+admin
 Site: C:\Automação\Sites\Cadastro de Produtos\login.html
 ------------------------------------------------
 Programas Necessários:
