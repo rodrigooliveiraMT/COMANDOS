@@ -1,0 +1,53 @@
+Login:
+admin@admin.com
+admin
+Site: C:\Automação\Sites\Cadastro de Produtos\login.html
+================================================================================================
+Programas Necessários:
+------------------------------------------------------------------------------------------------
+Java JDK > V. 8
+MVN
+VS CODE
+================================================================================================
+Sites para baixar os drivers
+------------------------------------------------------------------------------------------------
+WebDriver Chrome:
+DRIVE CHROME: https://googlechromelabs.github.io/chrome-for-testing/
+MAVEN: https://maven.apache.org/download.cgi
+================================================================================================
+Comando para criar o projeto Maven + Selenium
+------------------------------------------------------------------------------------------------
+mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart
+================================================================================================
+Configuração do Ambiente de Desenvolvimento
+------------------------------------------------------------------------------------------------
+1 - Extrair o arquivo MAVEN em uma pasta, de preferência no disco C;
+2 - Extrair o arquivo DRIVE CHROME em uma pasta, de preferência no disco C;
+3 - Configurar o arquivo JAVA na Variáveis de Ambientes, criar uma variável e adiciona-ló no path;
+3 - Configurar o arquivo MAVEN na Variáveis de Ambientes, criar uma variável e adiciona-ló no path.
+================================================================================================
+Configuração do arquivo POM
+------------------------------------------------------------------------------------------------
+  <!-- Arquivo de propriedades do projeto -->
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+
+  <dependencies>
+    <!-- Dependência para fazer o Senium funcionar no Chrome -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>4.33.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
