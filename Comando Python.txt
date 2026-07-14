@@ -1,8 +1,0 @@
-python -m venv venv //Comando para criar maquina virtual Python (Executar uma única vez no projeto)
-.venv\Scripts\Activate.ps1 //Ativar a máquina virtual Python pelo vscode (Executar todas as vez que abrir o projeto)
-.venv\Scripts\Activate.bat //Ativar a máquina virtual Python pelo cmd (Executar todas as vez que abrir o projeto)
-pip install selenium //Instalar Selenium na máquina virtual Python (Executar uma única vez no projeto)
-pip install selenium //Instalar Selenium na máquina virtual Python (Executar uma única vez no projeto .venv)
-
-#Comando para atualizar Python
-winget install -e --id Python.Python.3.14

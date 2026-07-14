@@ -1,8 +1,21 @@
-python -m venv mv #Comando para criar maquina virtual Python (Executar uma única vez no projeto)
-mv\Scripts\Activate.bat #Ativar a máquina virtual Python pelo cmd (Executar todas as vez que abrir o projeto)
-pip install selenium #Instalar Selenium na máquina virtual Python (Executar uma única vez no projeto)
-Remove-Item -Recurse -Force mv # Remove a máquina virtual (venv/mv)
+python -m venv mv //Comando para criar maquina virtual Python (Executar uma única vez no projeto)
+mv\Scripts\Activate.ps1 //Ativar a máquina virtual Python pelo vscode (Executar todas as vez que abrir o projeto)
+mv\Scripts\Activate.bat //Ativar a máquina virtual Python pelo cmd (Executar todas as vez que abrir o projeto)
+pip install selenium //Instalar Selenium na máquina virtual Python (Executar uma única vez no projeto)
 pip install pytest
+# ===============================================================================================================================================================
+# Executar os testes
+    python -m pytest
+    python -m pytest -v -s
+    python -m pytest tests\test_curso_selenium_test.py
+# ===============================================================================================================================================================	
+deactivate # Sai da máquina virtual e retorna para a máquina local
+Remove-Item -Recurse -Force mv # Deleta a máquina virtual (mv ou venv)
+mv\Scripts\activate # Ativa a máquina virtual
+python -m pip install --upgrade pip # Atualiza a versão do python
+winget install -e --id Python.Python.3.14 #Comando para atualizar Python
+pip list
+pip show pytest
 # ===============================================================================================================================================================
 
 python -m pip install pytest allure-pytest   #Comando para instalar allure
@@ -21,9 +34,7 @@ python -m pytest -v --headed --browser=chromium tests\test_primeiro.py --allured
 allure generate allure-results -o allure-report --clean
 allure generate allure-results -o allure-results --clean
 allure serve allure-report
-
-
-
+# ===============================================================================================================================================================
 PlayWright
 ---------------------
 1 - Instalar Python + Add Python to Path
@@ -64,3 +75,5 @@ page.locator('[name="q"]') ---> Name
 page.locator("//input[@name='q']") ---> Xpath
 page.locator("input[name='q']") ---> Xpath
 page.locator("//h1[text()='TextoAqui']") ---> Xpath
+
+python -m pip install --upgrade pip setuptools wheel
